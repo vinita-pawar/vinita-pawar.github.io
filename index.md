@@ -1,9 +1,6 @@
 ---
-layout: home
-title: Home
+layout: default
 ---
-
-## Welcome!
 
 I am a PhD student at the University of Utah, advised by [Prof. Ryan Stutsman](https://www.cs.utah.edu/~stutsman/) in the [Utah Scalable Computer Systems Lab](https://uscs.cs.utah.edu/).
 
