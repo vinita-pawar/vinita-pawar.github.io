@@ -42,11 +42,21 @@ h2 {
     color: #007acc;
 }
 
-.profile-pic {
+/* .profile-pic {
     max-width: 150px;
     border-radius: 50%;
     margin: 10px 0;
 }
+ */
+.profile-pic {
+  width: 150px; /* Adjust the size */
+  height: auto;
+  border-radius: 50%; /* Makes it circular */
+  display: block;
+  margin: 20px auto; /* Centers the image */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
 
 form label {
     display: block;
