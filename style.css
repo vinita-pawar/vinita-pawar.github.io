@@ -49,7 +49,7 @@ h2 {
 }
  */
 .profile-pic {
-  width: 100px; /* Adjust the size */
+  width: 60px; /* Adjust the size */
   height: auto;
   border-radius: 50%; /* Makes it circular */
   display: block;
