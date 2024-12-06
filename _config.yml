@@ -18,11 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Hello! I am Vinita Pawar
+title: Vinita Pawar
 email: vinita.pawar@utah.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  I am a PhD student at the University of Utah, advised by Prof. Ryan Stutsman in the Utah Scalable Computer Systems lab.
-  My research interests are Operating Systems, Distributed Systems, Storage and Memory Systems.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://vinita-pawar.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  vinita-pawar
