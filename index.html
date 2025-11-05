@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinita Pawar - PhD Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d9ff;
+            --secondary: #7c3aed;
+            --accent: #f472b6;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-hover: #334155;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg-dark);
+            min-height: 100vh;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(244, 114, 182, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            color: var(--text);
+            border: 2px solid var(--border);
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-hover);
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 30px 40px;
+        }
+
+        header {
+            padding: 80px 40px;
+            margin-bottom: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .profile-section {
+            flex-shrink: 0;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 40px rgba(0, 217, 255, 0.4);
+            transition: all 0.3s;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(0, 217, 255, 0.6);
+        }
+
+        .profile-placeholder {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 40px rgba(0, 217, 255, 0.4);
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .glow-text {
+            font-size: 4em;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 80px rgba(0, 217, 255, 0.5);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.3));
+            }
+            to {
+                filter: drop-shadow(0 0 40px rgba(124, 58, 237, 0.6));
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .intro {
+            font-size: 1.15em;
+            color: var(--text);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .intro a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .intro a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .intro a:hover::after {
+            width: 100%;
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            border-color: var(--primary);
+            background: var(--bg-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .interests-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 40px 0;
+            padding: 30px;
+        }
+
+        .tag {
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 25px;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            border-color: var(--primary);
+            background: var(--bg-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 217, 255, 0.2);
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            padding: 50px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+
+        .section:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 50px rgba(0, 217, 255, 0.1);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: var(--text);
+            margin-bottom: 35px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 25px 0 25px 35px;
+            border-left: 2px solid var(--border);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 30px;
+            width: 14px;
+            height: 14px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--primary);
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            border-left-color: var(--primary);
+        }
+
+        .timeline-item:hover::before {
+            width: 20px;
+            height: 20px;
+            left: -11px;
+            box-shadow: 0 0 30px var(--primary);
+        }
+
+        .item-title {
+            font-size: 1.4em;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .item-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+
+        .item-date {
+            color: var(--primary);
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .item-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-top: 10px;
+        }
+
+        .publication {
+            background: var(--bg-dark);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .publication:hover {
+            transform: translateX(8px);
+            border-left-width: 6px;
+            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.2);
+        }
+
+        .pub-title {
+            font-size: 1.2em;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .pub-authors {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .pub-venue {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .award-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(251, 191, 36, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        /* Light theme */
+        body.light-theme {
+            --bg-dark: #ffffff;
+            --bg-card: #f8fafc;
+            --bg-hover: #e2e8f0;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --primary: #0284c7;
+            --secondary: #7c3aed;
+        }
+
+        body.light-theme::before {
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 50%);
+        }
+
+        body.light-theme .glow-text {
+            text-shadow: none;
+            animation: none;
+        }
+
+        body.light-theme .section {
+            background: var(--bg-card);
+            border-color: var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 20px 40px;
+            }
+
+            header {
+                padding: 60px 20px;
+            }
+
+            .glow-text {
+                font-size: 2.5em;
+            }
+
+            .section {
+                padding: 30px 25px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 10px 20px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section, header {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">☀️ Light Mode</button>
+
+    <div class="container">
+        <header>
+            <h1 class="glow-text">Vinita Pawar</h1>
+            <div class="subtitle">PhD Researcher in Computer Science</div>
+            <div class="intro">
+                <p>I am a PhD student at the University of Utah, advised by <a href="https://www.cs.utah.edu/~stutsman/" target="_blank">Prof. Ryan Stutsman</a> in the <a href="https://uscs.cs.utah.edu/" target="_blank">Utah Scalable Computer Systems Lab</a>.</p>
+            </div>
+            <div class="contact-bar">
+                <a href="mailto:vinita.pawar@utah.edu" class="contact-link">
+                    <span>✉️</span>
+                    <span>Email</span>
+                </a>
+                <a href="https://linkedin.com/in/vinitapawar" target="_blank" class="contact-link">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="tel:+18016683765" class="contact-link">
+                    <span>📞</span>
+                    <span>Phone</span>
+                </a>
+            </div>
+            
+            <div class="interests-box">
+                <span class="tag">Operating Systems</span>
+                <span class="tag">Distributed Systems</span>
+                <span class="tag">Storage Systems</span>
+                <span class="tag">Memory Systems</span>
+                <span class="tag">High Performance Computing</span>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>Education</h2>
+            
+            <div class="timeline-item">
+                <div class="item-title">Ph.D. in Computer Science</div>
+                <div class="item-subtitle">University of Utah, Salt Lake City, USA</div>
+                <div class="item-date">Jan 2024 – Present</div>
+                <div class="item-description">
+                    <p><strong>Advisor:</strong> Prof. Ryan Stutsman</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-title">Master's in Computer Science</div>
+                <div class="item-subtitle">University of Utah, Salt Lake City, USA</div>
+                <div class="item-date">Aug 2020 – May 2022</div>
+                <div class="item-description">
+                    <p><strong>GPA:</strong> 3.87/4.0</p>
+                    <p><strong>Coursework:</strong> Distributed Systems, Advanced Operating Systems, Advanced Computer Architecture, Advanced Algorithms, Parallel Programming, System Security</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-title">Bachelor's in Computer Science</div>
+                <div class="item-subtitle">Pune Institute of Computer Technology (PICT), Pune, India</div>
+                <div class="item-date">Aug 2015 – May 2018</div>
+                <div class="item-description">
+                    <p><strong>GPA:</strong> 3.57/4.0</p>
+                    <p><strong>Coursework:</strong> Operating Systems, Algorithms, Databases, Networks, High Performance Computing</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <div class="pub-title">ObjecTier: Non-Invasively Boosting Memory Tiering Performance</div>
+                <div class="pub-authors">Vinita Pawar, Ankit Bhardwaj, Ryan Stutsman</div>
+                <div class="pub-venue">8th Workshop on Hot Topics in Cloud Computing Performance (HotCloudPerf '25)</div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">Remote Memory Prefetching: Is Coarse-grained Fine?</div>
+                <div class="pub-authors">James McMahon, Vinita Pawar, Ryan Stutsman</div>
+                <div class="pub-venue">8th Workshop on Hot Topics in Cloud Computing Performance (HotCloudPerf '25)</div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">Cache-Coherent Accelerators for Persistent Memory Crash Consistency</div>
+                <div class="pub-authors">Ankit Bhardwaj, Todd Thornley, Vinita Pawar, Reto Achermann, Gerd Zellweger, and Ryan Stutsman</div>
+                <div class="pub-venue">14th ACM Workshop on Hot Topics in Storage and File Systems (HotStorage '22)</div>
+                <div class="award-badge">
+                    <span>🏆</span>
+                    <span>Best Paper Award</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Work Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="item-title">Software Engineer</div>
+                <div class="item-subtitle">Twilio Inc., Remote (USA)</div>
+                <div class="item-date">Jun 2022 – Dec 2023</div>
+                <div class="item-description">
+                    <p>Developed and maintained application for storing user profiles in graph form on distributed database DynamoDB using Go and Kubernetes.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-title">Software Engineer</div>
+                <div class="item-subtitle">Shoreline IoT Inc., Pune, India</div>
+                <div class="item-date">Jul 2018 – Aug 2020</div>
+                <div class="item-description">
+                    <p>Developed firmware on MW300 and Apollo3 micro-controllers to build an IoT Gateway for remote asset monitoring and control.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-title">System Service Representative</div>
+                <div class="item-subtitle">IBM India Pvt. Ltd., Pune, India</div>
+                <div class="item-date">Jul 2014 – Jul 2015</div>
+                <div class="item-description">
+                    <p>Performance monitoring and maintaining reliability of a 117 nodes GPFS cluster in an AIX deployed environment with 4 clustered file systems totaling 2.8 Petabytes of shared SAN disk storage.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Teaching</h2>
+            
+            <div class="timeline-item">
+                <div class="item-title">Teaching Assistant - Operating Systems</div>
+                <div class="item-subtitle">University of Utah • Instructor: Prof. Ryan Stutsman</div>
+                <div class="item-date">Spring 2022, Spring 2021</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-title">Teaching Assistant - Computer Systems</div>
+                <div class="item-subtitle">University of Utah • Instructor: Prof. Mu Zhang</div>
+                <div class="item-date">Fall 2021</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-title">Teaching Assistant - Computer Organization</div>
+                <div class="item-subtitle">University of Utah • Instructor: Prof. Mahdi Nazm Bojnordi</div>
+                <div class="item-date">Fall 2020</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Feel free to explore my site to learn more about my research, publications, and updates.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.theme-toggle');
+            
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                button.textContent = '☀️ Light Mode';
+            } else {
+                body.classList.add('light-theme');
+                button.textContent = '🌙 Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
