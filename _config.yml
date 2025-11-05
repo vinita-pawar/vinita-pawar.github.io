@@ -26,7 +26,7 @@ url: "https://vinita-pawar.github.io" # the base hostname & protocol for your si
 github_username:  vinita-pawar
 
 # Build settings
-theme: minima
+theme: null
 plugins:
   - jekyll-feed
 
