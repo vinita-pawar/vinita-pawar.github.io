@@ -419,6 +419,18 @@
 
             header {
                 padding: 60px 20px;
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .header-content {
+                text-align: center;
+            }
+
+            .profile-image, .profile-placeholder {
+                width: 180px;
+                height: 180px;
             }
 
             .glow-text {
@@ -466,25 +478,36 @@
 
     <div class="container">
         <header>
-            <h1 class="glow-text">Vinita Pawar</h1>
-            <div class="subtitle">PhD Researcher in Computer Science</div>
-            <div class="intro">
-                <p>I am a PhD student at the University of Utah, advised by <a href="https://www.cs.utah.edu/~stutsman/" target="_blank">Prof. Ryan Stutsman</a> in the <a href="https://uscs.cs.utah.edu/" target="_blank">Utah Scalable Computer Systems Lab</a>.</p>
+            <div class="profile-section">
+                <!-- Replace the src below with your actual photo URL -->
+                <!-- <img src="vinita.png" alt="Vinita Pawar" class="profile-image"> -->
+                
+                <!-- Placeholder until you add your photo -->
+                <div class="profile-placeholder">👩‍💻</div>
             </div>
-            <div class="contact-bar">
-                <a href="mailto:vinita.pawar@utah.edu" class="contact-link">
-                    <span>✉️</span>
-                    <span>Email</span>
-                </a>
-                <a href="https://linkedin.com/in/vinitapawar" target="_blank" class="contact-link">
-                    <span>💼</span>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="tel:+18016683765" class="contact-link">
-                    <span>📞</span>
-                    <span>Phone</span>
-                </a>
+            
+            <div class="header-content">
+                <h1 class="glow-text">Vinita Pawar</h1>
+                <div class="subtitle">PhD Researcher in Computer Science</div>
+                <div class="intro">
+                    <p>I am a PhD student at the University of Utah, advised by <a href="https://www.cs.utah.edu/~stutsman/" target="_blank">Prof. Ryan Stutsman</a> in the <a href="https://uscs.cs.utah.edu/" target="_blank">Utah Scalable Computer Systems Lab</a>.</p>
+                </div>
+                <div class="contact-bar">
+                    <a href="mailto:vinita.pawar@utah.edu" class="contact-link">
+                        <span>✉️</span>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://linkedin.com/in/vinitapawar" target="_blank" class="contact-link">
+                        <span>💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="tel:+18016683765" class="contact-link">
+                        <span>📞</span>
+                        <span>Phone</span>
+                    </a>
+                </div>
             </div>
+        </header>
             
             <div class="interests-box">
                 <span class="tag">Operating Systems</span>
